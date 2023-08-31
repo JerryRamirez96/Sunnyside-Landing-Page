@@ -1,0 +1,643 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+/*
+    3. Allow percentage-based heights in the application
+  */
+html,
+body {
+  height: 100%;
+  /* width: 100%; */
+}
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+    6. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  /* https://stackoverflow.com/questions/5218927/z-index-not-working-with-fixed-positioning  */
+}
+/*
+    7. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    8. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* https://codepen.io/tag/mobile-menu */
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Fronts */
+/* body {
+    font-family: 'Barlow', sans-serif;
+    font-family: 'Fraunces', serif; 
+} */
+
+:root {
+  --Primary-Soft-red: hsl(7, 99%, 70%);
+  --Primary-Yellow: hsl(51, 100%, 49%);
+  --Primary-Dark-desaturated-cyan-graphic-design-text: hsl(167, 40%, 24%);
+  --Primary-Dark-blue-photography-text: hsl(198, 62%, 26%);
+  --Primary-Dark-moderate-cyan-footer: hsl(168, 34%, 41%);
+
+  --Neutral-Very-dark-desaturated-blue: hsl(212, 27%, 19%);
+  --Neutral-Very-dark-grayish-blue: hsl(213, 9%, 39%);
+  --Neutral-Dark-grayish-blue: hsl(232, 10%, 55%);
+  --Neutral-Grayish-blue: hsl(210, 4%, 67%);
+  --Neutral-White: hsl(0, 0%, 100%);
+
+  --fs-primary: 18px;
+}
+
+/* navigation for Desktop */
+.openbtn {
+  display: none;
+}
+
+.hero-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(7.5rem);
+  color: var(--Neutral-White);
+  font-weight: 900;
+  font-size: 2rem;
+  line-height: 1;
+  font-family: "Fraunces", serif;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+}
+
+.header-container {
+  /* background-image: url("./images/desktop/image-header.jpg");  */
+  /* width: 100%;  */
+  /* height: 89vh;  */
+  /* height: 785px;  */
+  /* background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+  padding-top: 2.5rem;
+
+  background: url("./images/mobile/image-header.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+/* Desktop header */
+@media (min-width: 769px) {
+  /* hide mobile images */
+  .milk-mobile,
+  .orange-mobile,
+  .cone-mobile,
+  .sugar-cubes-mobile {
+    display: none;
+  }
+
+  .header-container {
+    background: url("./images/desktop/image-header.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-size: auto 60rem; */
+    /* height: 60rem; */
+    height: 100vh;
+    background-position: center;
+    /* background-position-x: center;
+    background-position-y: bottom; */
+  }
+}
+
+.nav-flex {
+  --max-width: 1330px;
+  --padding: 1rem;
+  width: min(var(--max-width), 100% - (var(--padding) * 2));
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+
+  align-items: center;
+
+  position: relative;
+}
+
+.primary-navigation ul {
+  display: flex;
+  align-items: center;
+  justify-self: end;
+  gap: 2rem;
+}
+
+.primary-navigation ul a {
+  font-family: "Barlow", sans-serif;
+  color: var(--Neutral-White);
+  font-size: var(--fs-primary);
+}
+
+button {
+  border: none;
+  color: var(--Neutral-Very-dark-desaturated-blue);
+  text-transform: uppercase;
+  font-family: "Fraunces", serif;
+  font-weight: 900;
+  padding: 0.7rem 2rem;
+  border-radius: 100vh;
+}
+
+.arrow-img {
+  position: absolute;
+  top: 11rem;
+}
+
+/* main (mobile first)*/
+.egg img {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* width: 375px;   */
+  width: 100%;
+}
+
+.brand-audience {
+  padding: 3.75rem 1.5rem;
+  text-align: center;
+}
+
+.brand-audience h2 {
+  font-family: "Fraunces", serif;
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--Neutral-Very-dark-desaturated-blue);
+}
+
+.brand-audience p {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-family: "Barlow", sans-serif;
+  font-size: var(--fs-primary);
+  color: var(--Neutral-Very-dark-grayish-blue);
+
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 50ch;
+}
+
+.brand-audience a {
+  font-family: "Fraunces", serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: var(--fs-primary);
+  color: var(--Neutral-Very-dark-desaturated-blue);
+}
+
+.pink-cup img {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* width: 375px;   */
+  width: 100%;
+}
+
+.graphic-photography {
+  /* (keep commented out) background-image: url("./images/mobile/image-graphic-design.jpg"); 
+  background-repeat: no-repeat;
+  background-size: cover;  */
+
+  /* height: 600px; */
+
+  /* (keep commented) height: 536px; */
+
+  padding-bottom: 4rem;
+
+  /* background: url("./images/mobile/image-graphic-design.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; */
+
+  background-image: url("./images/mobile/image-graphic-design.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* width: 100%; */
+  height: 70vh;
+}
+
+.graphic-photography-parent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+}
+.graphic-photography-parent h2 {
+  font-family: "Fraunces", serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--Primary-Dark-desaturated-cyan-graphic-design-text);
+}
+.graphic-photography-parent p {
+  text-align: center;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-top: 2rem;
+  font-size: var(--fs-primary);
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+  color: var(--Primary-Dark-desaturated-cyan-graphic-design-text);
+
+  max-width: 40ch;
+}
+
+.graphic-photography-orange {
+  background-image: url("./images/mobile/image-photography.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  height: 70vh;
+
+  /* height: 600px;
+  height: 536px; */
+  padding-bottom: 4rem;
+}
+
+/* Mobile testimonials */
+.testimonials-container {
+  padding: 3.6rem 2.2rem;
+}
+.testimonials-container h3 {
+  text-align: center;
+  font-family: "Fraunces", serif;
+  font-size: var(--fs-primary);
+  font-weight: 700;
+  color: var(--Neutral-Grayish-blue);
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+}
+.testimonials-items {
+  margin-top: 3.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testimonial-img {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+}
+
+.testimonial-description {
+  margin-top: 1.8rem;
+  margin-bottom: 1.8rem;
+  text-align: center;
+  font-size: var(--fs-primary);
+  font-family: "Barlow", sans-serif;
+  color: var(--Neutral-Very-dark-grayish-blue);
+  font-weight: 600;
+
+  max-width: 40ch;
+}
+
+.name {
+  margin-bottom: 1rem;
+  font-family: "Fraunces", serif;
+  font-weight: 900;
+  font-size: 1.2rem;
+}
+
+.title {
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--Neutral-Grayish-blue);
+}
+
+/* Food images Grid mobile */
+.food-images-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  /* width: 375px;   */
+}
+
+.milk picture,
+.orange picture,
+.cone picture,
+.sugar-cubes picture {
+  width: 100%;
+}
+
+.milk {
+  /* background-image: url('./images/mobile/image-gallery-milkbottles.jpg'); */
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  /* grid-column: 1 / 2;
+  grid-row: 1; */
+}
+.orange {
+  /* background-image: url('./images/mobile/image-gallery-orange.jpg'); */
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  /* grid-column: 2 / 3;
+  grid-row: 1; */
+}
+.cone {
+  /* background-image: url('./images/mobile/image-gallery-cone.jpg'); */
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  /* grid-column: 1 / 2;
+  grid-row: 2; */
+}
+.sugar-cubes {
+  /* background-image: url('./images/mobile/image-gallery-sugar-cubes.jpg');  */
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* width: 50%; */
+
+  /* grid-column: 2 / 3;
+  grid-row: 2; */
+}
+
+/* mobile footer */
+.footer-logo {
+  filter: invert(50%) sepia(24%) saturate(741%) hue-rotate(118deg)
+    brightness(92%) contrast(87%);
+}
+
+.footer-container {
+  padding-top: 3.4375rem;
+  padding-bottom: 3.4375rem;
+  background-color: hsl(168, 46%, 57%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.8125rem;
+}
+
+.footer-nav-items {
+  display: flex;
+  gap: 3rem;
+}
+.footer-navigation ul li a {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  color: var(--Primary-Dark-moderate-cyan-footer);
+  font-family: "Barlow", sans-serif;
+  font-size: var(--fs-primary);
+  font-weight: 600;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1.6rem;
+}
+
+/* Mobile navbar */
+@media (max-width: 769px) {
+  /* hide desktop images */
+  .milk-desktop,
+  .orange-desktop,
+  .cone-desktop,
+  .sugar-cubes-desktop {
+    display: none;
+  }
+
+  .openbtn {
+    display: block;
+  }
+  .close-menu {
+    display: none;
+  }
+  .open-menu {
+    display: block;
+  }
+  .header-container {
+    background-image: url("./images/mobile/image-header.jpg");
+    width: 100%;
+    height: 539px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .primary-navigation {
+    /* height: auto;
+    width: auto; */
+    position: absolute;
+    z-index: 999;
+    top: 4.375rem;
+    background-color: white;
+    overflow-x: hidden;
+    /* transition: 500ms ease-in-out; */
+    padding: 2.8125rem 5.625rem;
+  }
+  .primary-navigation ul {
+    flex-direction: column;
+  }
+  .primary-navigation ul a {
+    color: var(--Neutral-Very-dark-desaturated-blue);
+    opacity: 0.8;
+  }
+  button {
+    background-color: var(--Primary-Yellow);
+  }
+}
+
+/* tablet styling */
+@media only screen and (max-width: 769px) and (min-width: 465px) {
+  .header-container {
+    background-position: 0% 80%; /* background-position: x% y% (y is from the top)*/
+    /* background-position: center bottom;    */
+  }
+  .arrow-img {
+    top: 9.5rem;
+  }
+
+  .graphic-photography {
+    background-position: center 30%;
+  }
+  .graphic-photography-orange {
+    background-position: center 40%;
+  }
+}
+
+/* mobile body */
+@media (max-width: 769px) {
+  .hero-header {
+    text-align: center;
+    transform: translateY(3rem);
+    font-size: 1.25rem;
+  }
+}
+
+/* Desktop body styles */
+@media (min-width: 769px) {
+  .main-containter-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .egg {
+    grid-column: 2 / 3;
+    grid-row: 1;
+  }
+
+  .egg-text {
+    grid-column: 1 / 2;
+    grid-row: 1;
+
+    /* padding: 3.75rem 1.5rem;  */
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    /* align-items: center;  */
+    justify-content: center;
+    padding-left: 8rem;
+  }
+
+  .pink-cup {
+    grid-column: 1 / 2;
+    grid-row: 2;
+  }
+  .cup-text {
+    grid-column: 2 / 3;
+    grid-row: 2;
+
+    padding: 3.75rem 1.5rem;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    /* align-items: center;  */
+    justify-content: center;
+    padding-left: 8rem;
+  }
+  .graphic-photography {
+    grid-column: 1 / 2;
+    grid-row: 3;
+  }
+  .graphic-photography-orange {
+    grid-column: 2 / 3;
+    grid-row: 3;
+  }
+
+  .brand-audience {
+    text-align: left;
+  }
+  .brand-audience p {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .graphic-photography-parent p {
+    width: 35ch;
+  }
+  .testimonials-flex {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+
+    --max-width: 1140px;
+    --padding: 1rem;
+    width: min(var(--max-width), 100% - (var(--padding) * 2));
+    margin-inline: auto;
+  }
+  .testimonial-description {
+    max-width: 30ch;
+  }
+
+  .graphic-photography {
+    background-image: url("./images/desktop/image-graphic-design.jpg");
+    background-position: center;
+  }
+  .graphic-photography-orange {
+    background-image: url("./images/desktop/image-photography.jpg");
+    background-position: center;
+  }
+
+  .food-images-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    /* width: 375px;   */
+  }
+}
+
+/* smaller laptop screen styles */
+@media (min-width: 769px) and (max-width: 1234px) {
+  .egg-text,
+  .cup-text {
+    padding: 0;
+    padding-left: 2rem;
+  }
+  .brand-audience h2 {
+    font-size: 1.8rem;
+  }
+  .brand-audience p {
+    max-width: 40ch;
+    width: 34ch;
+  }
+}
+/* 
+@media (min-width: 769px) and (max-width: 1015px) {
+  .hero-header h1 {
+    font-size: 3rem;   
+  }
+  .egg-text, .cup-text {
+    padding-left: 2.5rem;
+    padding-bottom: 2rem;  
+  }
+} */
